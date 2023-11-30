@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+<h2>Listado de Obras </h2>
+<table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Presupuesto</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obra in obras %}
+      <tr>
+        <td>{{ obra.titulo }}</td>
+        <td>{{ obra.presupuesto }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <form class="form-inline" action="{% url 'tasks_search' %}" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar Obra" >
+        <button  class="btn btn-outline-secondary" type="submit" >Buscar Obra</button>
+    </div>
+  </form>
+
+    
+
+
+{% endblock%}
