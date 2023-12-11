@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q!pexs*09-w(kkgr#twmo8r9d4+i33no$6dd++z+a&k#6tkfpi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'obras.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'postgres',
+        'PASSWORD': 'facu123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
